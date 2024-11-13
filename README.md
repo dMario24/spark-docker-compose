@@ -21,8 +21,26 @@ Url https://github.com/apache/spark
 Type --help for more information.
  ```
 
+## Try
+```
+$ docker compose up -d
+
+# sudo apt install wslu
+$ wslview http://localhost:8080
+$ wslview http://localhost:8081
+```
+
+
+## Debug
+```
+$ docker inspect spark:3.5.1-scala2.12-java17-python3-ubuntu
+$ docker cp spark-docker-compose-spark-master-1:/opt/entrypoint.sh .
+```
 ## Ref
 - https://github.com/apache/spark-docker
+- https://hub.docker.com/_/spark
+- https://github.com/apache/spark-docker/blob/master/OVERVIEW.md#environment-variable
+- https://spark.apache.org/docs/latest/spark-standalone.html
 
 ### spark + prometheus
 - https://stackoverflow.com/questions/49488956/how-to-monitor-apache-spark-with-prometheus
