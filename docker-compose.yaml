@@ -1,0 +1,19 @@
+services:
+  spark-master:
+    image: spark:3.5.1-scala2.12-java17-python3-ubuntu
+    command: "/opt/spark/bin/spark-class org.apache.spark.deploy.master.Master"
+    ports:
+      - "8080:8080"
+
+  spark-worker:
+    image: spark:3.5.1-scala2.12-java17-python3-ubuntu
+    command: "/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://spark-master:7077"
+    environment:
+      - SPARK_WORKER_MEMORY=512m
+      - SPARK_WORKER_CORES=1
+      
+    ports:
+      - "8081:8081"
+    depends_on:
+      - spark-master
+
