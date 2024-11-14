@@ -30,6 +30,23 @@ $ wslview http://localhost:8080
 $ wslview http://localhost:8081
 ```
 
+## Metrics
+- https://dzlab.github.io/bigdata/2020/07/03/spark3-monitoring-1/
+- https://grafana.com/docs/grafana-cloud/monitor-infrastructure/integrations/integration-reference/integration-spark/
+```
+# Master
+$ curl http://localhost:8080/metrics/master/prometheus/
+$ curl http://localhost:8080/metrics/master/json/
+$ curl http://localhost:8080/metrics/applications/prometheus/
+$ curl http://localhost:8080/metrics/applications/json/
+
+# Worker
+$ http://localhost:8081/metrics/prometheus/
+$ http://localhost:8081/metrics/json/
+
+
+```
+
 
 ## Debug
 ```
