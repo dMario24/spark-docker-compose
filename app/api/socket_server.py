@@ -1,7 +1,7 @@
 import socket
 import time
 import random
-from faker import Faker
+from tqdm import tqdm
 from faker import Faker
 fake = Faker()
 
@@ -35,7 +35,12 @@ def start_server(host='0.0.0.0', port=9999):
                 print(f"Sent: {message}", flush=True)
 
                 # n초마다 데이터를 전송
-                time.sleep(random.randint(1, 60))
+                sleep_seconds = random.randint(1, 60)
+                print(f"sleep_seconds:{sleep_seconds}", flush=True)
+                time.sleep(sleep_seconds)
+                # tqdm으로 프로그래스 바 표시
+                # for _ in tqdm(range(sleep_seconds), desc="Waiting", unit="s", ncols=80):
+                #     time.sleep(1)
 
 if __name__ == "__main__":
     start_server()

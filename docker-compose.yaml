@@ -17,6 +17,7 @@ services:
       - ./conf:/opt/spark/conf
     command: "/opt/spark/bin/spark-class org.apache.spark.deploy.worker.Worker spark://master:7077"
     environment:
+      - SPARK_WORKER_MEMORY=512m
       - SPARK_WORKER_CORES=2
     ports:
       - "8081:8081"
@@ -34,6 +35,8 @@ services:
     entrypoint: >
       /opt/spark/bin/spark-submit
       --master spark://master:7077
+      --executor-memory 471859200
+      --conf spark.ui.prometheus.enabled=true
       ../app/network_wordcount.py api 9999
     ports:
       - "4040:4040"
