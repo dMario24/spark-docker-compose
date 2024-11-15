@@ -1,0 +1,34 @@
+global:
+  scrape_interval: 10s
+
+scrape_configs:
+- job_name: cadvisor
+  scrape_interval: 5s
+  static_configs:
+  - targets:
+    - cadvisor:8080
+
+- job_name: "spark-master"
+  metrics_path: "/metrics/master/prometheus"
+  static_configs:
+    - targets: ["master:8080"]
+
+- job_name: "spark-master-applications"
+  metrics_path: "/metrics/applications/prometheus"
+  static_configs:
+    - targets: ["master:8080"]
+
+- job_name: "spark-worker"
+  metrics_path: "/metrics/prometheus"
+  static_configs:
+    - targets: ["worker:8081"]
+
+- job_name: "spark-driver"
+  metrics_path: "/metrics/prometheus"
+  static_configs:
+    - targets: ["driver:4040"]
+
+- job_name: "spark-driver-executors"
+  metrics_path: "/metrics/executors/prometheus"
+  static_configs:
+    - targets: ["driver:4040"]

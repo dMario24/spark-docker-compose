@@ -8,6 +8,7 @@ authors = [
 dependencies = [
     "Faker==32.1.0",
     "tqdm>=4.67.0",
+    "prometheus-client>=0.21.0",
 ]
 requires-python = ">=3.11"
 readme = "README.md"

@@ -30,8 +30,12 @@ $ wslview http://localhost:8080
 $ wslview http://localhost:8081
 ```
 
+## URLs
+- 
+
 ## Metrics
 - https://dzlab.github.io/bigdata/2020/07/03/spark3-monitoring-1/
+- https://dzlab.github.io/bigdata/2020/07/03/spark3-monitoring-2/
 - https://grafana.com/docs/grafana-cloud/monitor-infrastructure/integrations/integration-reference/integration-spark/
 ```
 # Master
@@ -219,3 +223,13 @@ $ docker cp spark-docker-compose-spark-master-1:/opt/entrypoint.sh .
 - https://grafana.com/docs/grafana-cloud/monitor-infrastructure/integrations/integration-reference/integration-spark/
 - https://dzlab.github.io/bigdata/2020/07/03/spark3-monitoring-1/
 - https://github.com/apache/spark/pull/25741
+- https://medium.com/@bhavya.joshi1901/monitoring-apache-spark-metrics-with-prometheus-a2846fe94028
+
+### prometheus container Advisor
+- https://prometheus.io/docs/guides/cadvisor/#docker-compose-configuration
+
+### prometheus 
+- https://github.com/cerndb/spark-dashboard?tab=readme-ov-file
+
+### prometheus client
+- https://prometheus.io/docs/instrumenting/clientlibs/
